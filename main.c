@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 	while ( (input=fgetc(fp)) != EOF)
 	{
 		putchar(input);
-	}
+	} //한 글자씩 읽어오는 방법 
 	
 	fclose(fp);
 	
