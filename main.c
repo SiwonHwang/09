@@ -6,17 +6,19 @@
 int main(int argc, char *argv[]) {
 	
 	char src[100] = "Programming course";
-	char dst[100];
+	
 	int i=0; 
 	
 	while (src[i] != '\0')
 	{
-		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0'; //이 문장 꼭 넣어야함! 
 	
-	printf("%s\n", dst);
+	printf("%s (%d)\n", src, i);
+	printf("%i", strlen(src)); // 문자열 길이 계산 
+	
+	
+	//strcpy(dst, src) : 문자열 복사 
 		
 	return 0;
 }
