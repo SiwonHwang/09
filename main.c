@@ -5,20 +5,20 @@
 
 int main(int argc, char *argv[]) {
 	
-	char src[100] = "Programming course";
+	FILE *fp;
+	char input[100];
+	int i;
 	
-	int i=0; 
+	fp = fopen("sample.txt", "w");
 	
-	while (src[i] != '\0')
+	for (i=0; i<3; i++)
 	{
-		i++;
+		printf("input the word : ");
+	    scanf("%s", &input);
+	    fprintf(fp, "%s\n", input);
 	}
 	
-	printf("%s (%d)\n", src, i);
-	printf("%i", strlen(src)); // 문자열 길이 계산 
-	
-	
-	//strcpy(dst, src) : 문자열 복사 
+	fclose(fp);
 		
 	return 0;
 }
