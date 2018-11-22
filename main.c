@@ -6,19 +6,24 @@
 int main(int argc, char *argv[]) {
 	
 	FILE *fp;
-	char input[100];
-	int i;
+	char input;
+	//char input[100];
 	
-	fp = fopen("sample.txt", "w");
+	fp = fopen("sample.txt", "r");
 	
-	for (i=0; i<3; i++)
+	while ( (input=fgetc(fp)) != EOF)
 	{
-		printf("input the word : ");
-	    scanf("%s", &input);
-	    fprintf(fp, "%s\n", input);
+		putchar(input);
 	}
 	
 	fclose(fp);
+	
+	/*
+	while ( fgets(input, 100, fp) != NULL)
+	{
+		printf(input);
+	}
+	*///한 단어씩 읽어오는 방법  
 		
 	return 0;
 }
