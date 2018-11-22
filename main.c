@@ -6,24 +6,30 @@
 int main(int argc, char *argv[]) {
 	
 	FILE *fp;
+	FILE *fp2;
 	char input;
-	//char input[100];
+	char original[100];
+	char copy[100];
+	int i=0;
 	
-	fp = fopen("sample.txt", "r");
+	printf("original file : ");
+	scanf("%s", original);
+	printf("copy file : ");
+	scanf("%s", copy);
+	
+	fp = fopen(original, "r");
+	fp2 = fopen(copy, "w");
 	
 	while ( (input=fgetc(fp)) != EOF)
 	{
-		putchar(input);
-	} //한 글자씩 읽어오는 방법 
+		fputc(input, fp2);
+		i++;
+	}
+	
+	printf("Copy success! (%d bytes copied)\n", i);
 	
 	fclose(fp);
-	
-	/*
-	while ( fgets(input, 100, fp) != NULL)
-	{
-		printf(input);
-	}
-	*///한 단어씩 읽어오는 방법  
+	fclose(fp2);
 		
 	return 0;
 }
